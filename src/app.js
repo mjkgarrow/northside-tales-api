@@ -29,11 +29,12 @@ app.use(helmet.contentSecurityPolicy({
 }))
 
 // Config CORS to prevent external access to API
-app.use(cors({
-    origin: ["http://localhost:" + PORT, "http://localhost:" + CLIENT_PORT, DEPLOYED_SITE],
-    optionsSuccessStatus: 200
-}))
+// app.use(cors({
+//     origin: ["http://localhost:" + PORT, "http://localhost:" + CLIENT_PORT, DEPLOYED_SITE],
+//     optionsSuccessStatus: 200
+// }))
 
+app.use(cors())
 
 // Config request data formatting.
 app.use(express.json())
