@@ -16,7 +16,7 @@ dotenv.config()
 const HOST = process.env.HOST || 'localhost'
 const DEPLOYED_SITE = process.env.DEPLOYED_SITE || 'localhost'
 const PORT = process.env.PORT || 3000
-const CLIENT_PORT = process.env.CLIENT_PORT || 5173 // default Vite dev port
+const CLIENT_PORT = process.env.CLIENT_PORT || 5173
 
 // Config helmet for headers security
 app.use(helmet())
