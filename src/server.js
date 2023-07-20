@@ -6,17 +6,14 @@ const { dbConnector, dbDisconnector } = require('./database')
 dotenv.config()
 let URL = ""
 switch (process.env.NODE_ENV) {
-    // case "production":
-    //     URL = process.env.PROD_URL
-    //     break;
-    // case "development":
-    //     URL = process.env.DEV_URL
-    //     break;
+    case "prod":
+        URL = process.env.PROD_URL
+        break;
     case "dev":
-        URL = "mongodb://localhost:27017/northside_tales_db"
+        URL = process.env.DEV_URL
         break;
     default:
-        console.log("Missing db URL")
+        URL = process.env.PROD_URL
 }
 
 // Config for shutdown
@@ -37,14 +34,21 @@ process.on('SIGTERM', cleanup);
 // Handle server close event
 app.on('close', () => {
     dbDisconnector()
-    console.log('Server is shutting down. Database disconnected.');
+    console.log('\nServer is shutting down. Database disconnected.');
 });
 
 // Connect database
 dbConnector(URL)
-    .then(() => { console.log("Connected to database") })
-    .catch(error => { console.log("Error connecting to db: " + error) })
+    .then(() => {
+        console.log(`
+    Connected to database`)
+    })
+    .catch(error => {
+        console.log(`
+    Error connecting to db: ` + error)
+    })
 
 app.listen(PORT, HOST, () => {
-    console.log(`Server started, listening at http://${HOST}:${PORT}`)
+    console.log(`
+    Server started, listening at http://${HOST}:${PORT}`)
 })
