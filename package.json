@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=dev nodemon src/server.js",
+    "dev": "NODE_ENV=dev HOST='' nodemon src/server.js",
     "start": "NODE_ENV=prod node src/server.js"
   },
   "keywords": [],

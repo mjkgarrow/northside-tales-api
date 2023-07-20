@@ -48,7 +48,7 @@ dbConnector(URL)
     Error connecting to db: ` + error)
     })
 
-app.listen(PORT, HOST, () => {
+app.listen(PORT, () => {
     console.log(`
-    Server started, listening at http://${HOST}:${PORT}`)
+    Server started, listening on port ${PORT}`)
 })
