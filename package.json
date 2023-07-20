@@ -2,9 +2,10 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=dev nodemon src/server.jsx"
+    "dev": "NODE_ENV=dev nodemon src/server.js",
+    "start": "NODE_ENV=prod node src/server.js"
   },
   "keywords": [],
   "author": "",
