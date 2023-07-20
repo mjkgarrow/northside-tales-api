@@ -54,7 +54,7 @@ app.get('/dbhealth', (req, res) => {    // Gets database health information
 
 app.get('/', (req, res) => {            // Home route for info about the API
     res.json({
-        message: "Welcome to StrataSphere, a building management API for tracking all Owners Corporation needs! For detailed documentation visit https://github.com/Manage-My-Block/StrataSphere-Docs"
+        message: "Welcome to Northside Tales! Head to https://github.com/mjkgarrow/northside-tales-api to take a look at the repo."
     })
 })
 
